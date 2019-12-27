@@ -11,12 +11,11 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "employees")
 public class Employee extends Auditable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private  Long id;
-
+    @NotBlank
+    @Email
+    private String email;
 
     @Getter
     @Setter
@@ -26,6 +25,10 @@ public class Employee extends Auditable {
     @Getter
     @Setter
     @NotBlank
-    @Email
-    private String email;
+    private String address;
+
+    @Getter
+    @Setter
+    @NotBlank
+    private String phoneNumber;
 }
